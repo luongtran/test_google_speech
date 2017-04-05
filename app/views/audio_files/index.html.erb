@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Audio Files</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @audio_files.each do |audio_file| %>
+      
+      <tr>
+        
+        <td><b><%= audio_file.audio_file_name %></b></td>
+        <td><%= link_to 'Show', audio_file %></td>
+        <td><%= link_to 'Edit', edit_audio_file_path(audio_file) %></td>
+        <td><%= link_to 'Destroy', audio_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Audio File', new_audio_file_path %>
